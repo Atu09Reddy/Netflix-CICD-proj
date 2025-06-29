@@ -42,22 +42,6 @@
     docker rmi -f netflix
     ```
 
-It will show an error cause you need API key
-
-**Step 4: Get the API Key:**
-
-- Open a web browser and navigate to TMDB (The Movie Database) website.
-- Click on "Login" and create an account.
-- Once logged in, go to your profile and select "Settings."
-- Click on "API" from the left-side panel.
-- Create a new API key by clicking "Create" and accepting the terms and conditions.
-- Provide the required basic details and click "Submit."
-- You will receive your TMDB API key.
-
-Now recreate the Docker image with your api key:
-```
-docker build --build-arg TMDB_V3_API_KEY=<your-api-key> -t netflix .
-```
 
 **Phase 2: Security**
 
@@ -728,8 +712,3 @@ To deploy an application with ArgoCD, you can follow these steps, which I'll out
 
 4. **Access your Application**
    - To Access the app make sure port 30007 is open in your security group and then open a new tab paste your NodeIP:30007, your app should be running.
-
-**Phase 7: Cleanup**
-
-1. **Cleanup AWS EC2 Instances:**
-    - Terminate AWS EC2 instances that are no longer needed.
